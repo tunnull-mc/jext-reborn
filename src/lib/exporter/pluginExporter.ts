@@ -362,6 +362,7 @@ export class PluginExporter extends BaseExporter {
 
 		// sound_definitions.json
 
+		//Change volume declaration from 0.5 to 3 to make discs more audible for Geyser clients.
 		const soundDefinitions: {
 			[key: string]: {
 				__use_legacy_max_distance: true;
@@ -371,7 +372,7 @@ export class PluginExporter extends BaseExporter {
 					name: string;
 					load_on_low_memory: true;
 					stream: boolean;
-					volume: 0.5;
+					volume: 3;
 				}[];
 			};
 		} = {};
