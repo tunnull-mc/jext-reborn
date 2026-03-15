@@ -95,6 +95,9 @@ export const getVersionFromTime = () => {
 	const now = new Date();
 	const oneDay = 1000 * 60 * 60 * 24;
 
+	/*
+	-- Segment that causes issue #685. Circumvented by staticly setting version numbering until I care to fix it properly.
+	
 	// day of year
 	const startDay = new Date(now.getFullYear(), 0, 0);
 	const diffDay =
@@ -107,7 +110,10 @@ export const getVersionFromTime = () => {
 	const startSeconds = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
 	const diffSeconds = now.getTime() - startSeconds.getTime();
 	const seconds = Math.floor(diffSeconds / 1000);
-
+	
+	*/
+	day = 0;
+	seconds = 0;
 	return [now.getFullYear(), day, seconds];
 };
 
