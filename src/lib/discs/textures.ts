@@ -35,7 +35,8 @@ export const randomTextures = async (): Promise<{ discTexture: Blob; fragmentTex
 						data[i + 1] = parseInt(replaceInner.slice(3, 5), 16);
 						data[i + 2] = parseInt(replaceInner.slice(5, 7), 16);
 					}
-					if (data[i] === 0 && data[i + 1] === 255 && data[i + 2] === 0) {
+					//For whatever reason, Firefox display '0,255,0' as '146,248,39', probably some color smoothing bug.
+					if (data[i] === 146 && data[i + 1] === 248 && data[i + 2] === 39) {
 						data[i] = parseInt(replaceFill.slice(1, 3), 16);
 						data[i + 1] = parseInt(replaceFill.slice(3, 5), 16);
 						data[i + 2] = parseInt(replaceFill.slice(5, 7), 16);
@@ -75,7 +76,8 @@ export const randomTextures = async (): Promise<{ discTexture: Blob; fragmentTex
 						data[i + 1] = parseInt(replaceInner.slice(3, 5), 16);
 						data[i + 2] = parseInt(replaceInner.slice(5, 7), 16);
 					}
-					if (data[i] === 0 && data[i + 1] === 255 && data[i + 2] === 0) {
+					//Refer to line 38. Fixes coloring.
+					if (data[i] === 146 && data[i + 1] === 248 && data[i + 2] === 39) {
 						data[i] = parseInt(replaceFill.slice(1, 3), 16);
 						data[i + 1] = parseInt(replaceFill.slice(3, 5), 16);
 						data[i + 2] = parseInt(replaceFill.slice(5, 7), 16);
