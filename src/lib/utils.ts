@@ -112,8 +112,8 @@ export const getVersionFromTime = () => {
 	const seconds = Math.floor(diffSeconds / 1000);
 	
 	*/
-	day = 0;
-	seconds = 0;
+	const day = 0;
+	const seconds = 0;
 	return [now.getFullYear(), day, seconds];
 };
 
